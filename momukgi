@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>오늘 인후에서 뭐먹지?</title>
+
+        <style>
+            body {
+                font-family: sans-serif;
+                text-align: center;
+                margin-top: 80px;
+                background-color: #fff8f0;
+            }
+
+            h1 {
+                font-size: 36px;
+                color: #4fc3f7;
+            }
+
+            #result {
+                font-size: 28px;
+                font-weight: bold;
+                color: #333;
+                margin: 30px 0;
+            }
+
+            button {
+                font-size: 18px;
+                padding: 12px 32px;
+                background-color: #4fc3f7;
+                color: white;
+                border-radius: 8px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: #4fc3f7;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <h1>오늘 인후에서 뭐먹지?</h1>
+
+        <p id="result">버튼을 눌러보세요!</p>
+
+        <button>메뉴 뽑기</button>
+    <script>
+    
+        const menus = [
+            { name: "맛사랑", cat: "한식" },
+            { name: "다우리", cat: "한식" },
+            { name: "영종식당", cat: "한식" },
+            { name: "신촌설렁탕", cat: "한식" },
+            { name: "조선탕반", cat: "한식" },
+            { name: "청진동", cat: "한식" },
+            { name: "우리소참한우", cat: "한식" },
+            { name: "콩불", cat: "한식"},
+            { name: "성화해장국", cat: "한식" },
+            { name: "삼삼오오", cat: "한식" },
+            { name: "매운애", cat: "한식" },
+            { name: "공중보쌈", cat: "한식" },
+            { name: "숯불구이먹방", cat: "한식" },
+            { name: "일촌", cat: "한식" },
+            { name: "핵밥", cat: "한식" },
+            { name: "경동부추삼겹살", cat: "한식" },
+            { name: "미로곱창", cat: "한식" },
+            { name: "닭살부부", cat: "한식" },
+            { name: "동아리닭갈비", cat: "한식" },
+            { name: "일미닭갈비", cat: "한식" },
+            { name: "치사찜", cat: "한식" },
+            { name: "인하칼국수", cat: "한식" },
+            { name: "고수찜닭", cat: "한식" },
+            { name: "촌닭", cat: "한식" },
+            { name: "진국", cat: "한식" },
+            { name: "춤추는갈매기", cat: "한식" },
+            { name: "삼겹의 난", cat: "한식" },
+            { name: "명동손만두", cat: "한식" },
+            { name: "마약집", cat: "한식" },
+            { name: "온뚝", cat: "한식" },
+            { name: "찌개사랑", cat: "한식" },
+            { name: "삼청당", cat: "한식" },
+            { name: "시골집", cat: "한식" },
+            { name: "킹콩순두부", cat: "한식" },
+            { name: "일품부대찌개", cat: "한식" },
+            { name: "박모순", cat: "한식" },
+            { name: "인하성", cat: "중식" },
+            { name: "인하각", cat: "중식" },
+            { name: "짜장전설", cat: "중식" },
+            { name: "중경마라탕", cat: "중식" },
+            { name: "춘리마라탕", cat: "중식" },
+            { name: "탕화쿵푸", cat: "중식" },
+            { name: "마라시대", cat: "중식" },
+            { name: "미연팔복", cat: "중식" },
+            { name: "오하이오", cat: "일식" },
+            { name: "탄포포", cat: "일식" },
+            { name: "고양이눈", cat: "일식" },
+            { name: "돈마니", cat: "일식" },
+            { name: "왕돈까스", cat: "일식" },
+            { name: "산쪼메", cat: "일식" },
+            { name: "시루돈부리", cat: "일식" },
+            { name: "백소점", cat: "일식" },
+            { name: "가메이", cat: "일식" },
+            { name: "미식당", cat: "양식" },
+            { name: "레오펍", cat: "양식" },
+            { name: "까사올리브", cat: "양식" },,
+            { name: "롤링파스타", cat: "양식" },
+            { name: "치즈웨이브", cat: "양식" },
+            { name: "엽떡", cat: "분식" },
+            { name: "신전", cat: "분식" },
+            { name: "머루와 다래", cat: "분식" },
+            { name: "청년다방", cat: "분식" },
+            { name: "김밥브라더스", cat: "분식" },
+            { name: "정직유부", cat: "분식" },
+            { name: "지지고", cat: "패스트푸드" },
+            { name: "맘스터치", cat: "패스트푸드" },
+            { name: "봉구스밥버거", cat: "패스트푸드" },
+            { name: "버거킹", cat: "패스트푸드" },
+            { name: "노브랜드", cat: "패스트푸드" },
+            { name: "KFC", cat: "패스트푸드" },
+            { name: "에그드랍", cat: "패스트푸드" },
+            { name: "명량핫도그", cat: "패스트푸드" },
+            { name: "이삭토스트", cat: "패스트푸드" },
+
+
+        ]
+        
+        document.querySelector("button").onclick = function() {
+            
+            const randomIndex = Math.floor(Math.random() * menus.length);
+            
+            const picked = menus[randomIndex];
+            
+            document.getElementById("result").textContent = picked.name + " (" + picked.cat + ")";
+        }
+    </script>   
+    </body>
+</html>
